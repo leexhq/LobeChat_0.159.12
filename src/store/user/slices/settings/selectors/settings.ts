@@ -1,6 +1,11 @@
 import { DEFAULT_LANG } from '@/const/locale';
 import { DEFAULT_AGENT_META } from '@/const/meta';
-import { DEFAULT_AGENT, DEFAULT_AGENT_CONFIG, DEFAULT_TTS_CONFIG } from '@/const/settings';
+import {
+  DEFAULT_AGENT,
+  DEFAULT_AGENT_CONFIG,
+  DEFAULT_SYSTEM_AGENT_CONFIG,
+  DEFAULT_TTS_CONFIG,
+} from '@/const/settings';
 import { Locales } from '@/locales/resources';
 import { GeneralModelProviderConfig, GlobalLLMProviderKey, GlobalSettings } from '@/types/settings';
 import { isOnServerSide } from '@/utils/env';
@@ -48,9 +53,13 @@ const currentLanguage = (s: UserStore) => {
 const dalleConfig = (s: UserStore) => currentSettings(s).tool?.dalle || {};
 const isDalleAutoGenerating = (s: UserStore) => currentSettings(s).tool?.dalle?.autoGenerate;
 
+const currentSystemAgent = (s: UserStore) =>
+  merge(DEFAULT_SYSTEM_AGENT_CONFIG, currentSettings(s).systemAgent);
+
 export const settingsSelectors = {
   currentLanguage,
   currentSettings,
+  currentSystemAgent,
   currentTTS,
   dalleConfig,
   defaultAgent,
