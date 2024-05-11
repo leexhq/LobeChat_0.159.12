@@ -363,6 +363,14 @@ export default {
       title: 'WebRTC 同步',
     },
   },
+  systemAgent: {
+    title: 'System Agents',
+    translation: {
+      label: 'Translation model',
+      modelDesc: 'Specific model for translate message',
+      title: 'Translation Settings',
+    },
+  },
   tab: {
     about: '关于',
     agent: '默认助手',
