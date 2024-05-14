@@ -59,6 +59,7 @@ const BedrockProvider = memo(() => {
         },
       ]}
       checkModel={'anthropic.claude-instant-v1'}
+      modelList={{ showModelFetcher: true }}
       provider={ModelProvider.Bedrock}
       title={
         <Flexbox align={'center'} gap={8} horizontal>
