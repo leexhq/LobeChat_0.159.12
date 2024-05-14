@@ -5,7 +5,8 @@ const Bedrock: ModelProviderCard = {
   chatModels: [
     {
       displayName: 'Titan Text G1 - Lite',
-      id: 'amazon.titan-text-lite-v1:0',
+      enabled: true,
+      id: 'amazon.titan-text-lite-v1',
       tokens: 4096,
     },
     {
@@ -13,7 +14,7 @@ const Bedrock: ModelProviderCard = {
         'Amazon Titan Text G1 - Express v1，上下文长度可达 8192 个 token，适合广泛的用途。',
       displayName: 'Titan Text G1 - Express',
       enabled: true,
-      id: 'amazon.titan-text-express-v1:0',
+      id: 'amazon.titan-text-express-v1',
       tokens: 8192,
     },
     {
